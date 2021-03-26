@@ -1,2 +1,2 @@
 # cepeh-cybersecurity
-![Image of Yaktocat](https://octodex.github.com/images/yaktocat.png)
+![Image of CEPEH Logo](https://github.com/jameshenderson12/cepeh-cybersecurity/cepehlogo_100x100.png)
