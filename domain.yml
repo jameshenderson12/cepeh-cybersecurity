@@ -65,9 +65,8 @@ responses:
   utter_clarify:
   - text: Did that help you {name}?
   utter_inform_questions:
-  - text: Great! I’m glad you do! Can you please answer the following questions? It's
-      really helpful for me to understand how effective I am. I will ask some similar
-      questions later in our chat.
+  - text: Great! I’m glad you do! Please answer the following questions - it's
+      really helpful for me to understand how effective I am.
   utter_proceed:
   - text: Ok, great, let's carry on!
   - text: Thank you for responding - let's move on.
