@@ -227,4 +227,4 @@ stories:
     entities:
     - final_cybersecurity_confidence
   - action: utter_final_thanks
-  - action: action_pause        
+  - action: action_pause
