@@ -25,7 +25,6 @@ intents:
 - good_prevention
 - answer_why_think_that
 - answer_different_if_real
-- random_words
 - profanity
 entities:
 - name
