@@ -15,9 +15,6 @@ stories:
   steps:
   - checkpoint: check_continue
   - intent: deny
-  - action: action_user_to_continue
-  - slot_was_set:
-    - shall_continue: false
   - action: utter_goodbye
   - action: action_pause
 
@@ -25,14 +22,10 @@ stories:
   steps:
   - checkpoint: check_continue
   - intent: affirm
-  - action: action_user_to_continue
-  - slot_was_set:
-    - shall_continue: true
   - action: utter_inform_questions
   - action: utter_rating_q1
   - intent: technical_confidence
-    entities:
-    - technical_confidence
+  - action: utter_acknowledge
   - checkpoint: check_q1
 
 - story: continue to question 2, correct
@@ -51,13 +44,18 @@ stories:
   - action: utter_incorrect
   - checkpoint: check_q2
 
+- story: continue to question 3
+  steps:
+  - checkpoint: check_q2
+  - action: utter_rating_q3
+  - intent: initial_cybersecurity_confidence
+  - action: utter_acknowledge
+  - checkpoint: check_q3
+
 - story: unhappy with role play, say goodbye
   steps:
   - checkpoint: check_q3
   - intent: deny
-  - action: action_user_to_roleplay
-  - slot_was_set:
-    - shall_roleplay: false
   - action: utter_goodbye
   - action: action_pause
 
@@ -65,9 +63,6 @@ stories:
   steps:
   - checkpoint: check_q3
   - intent: affirm
-  - action: action_user_to_roleplay
-  - slot_was_set:
-    - shall_roleplay: true
   - action: utter_background
   - checkpoint: check_background
 
@@ -224,7 +219,5 @@ stories:
   - intent: answer_different_if_real
   - action: utter_rating_q7
   - intent: final_cybersecurity_confidence
-    entities:
-    - final_cybersecurity_confidence
   - action: utter_final_thanks
   - action: action_pause

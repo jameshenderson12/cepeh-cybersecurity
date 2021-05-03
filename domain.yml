@@ -29,24 +29,9 @@ intents:
 - profanity
 entities:
 - name
-- technical_confidence
-- initial_cybersecurity_confidence
-- final_cybersecurity_confidence
 slots:
   name:
     type: text
-    influence_conversation: false
-  technical_confidence:
-    type: text
-    influence_conversation: false
-  initial_cybersecurity_confidence:
-    type: text
-    influence_conversation: false
-  final_cybersecurity_confidence:
-    type: text
-    influence_conversation: false
-  shall_continue:
-    type: unfeaturized
     influence_conversation: false
 responses:
   utter_greet:
@@ -276,6 +261,4 @@ responses:
       I would really appreciate it if you could now [undertake a quick evaluation](https://docs.google.com/forms/d/1MwlYCzBSeM4BPU5-PKIRiV6fctmwy4mCdSuYOAD0Rwg/edit)
       of our experience. Goodbye for now. 👋
 actions:
-- action_user_to_continue
-- action_user_to_roleplay
 - action_pause

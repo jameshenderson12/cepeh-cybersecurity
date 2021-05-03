@@ -83,26 +83,17 @@
 #         return []
 #
 #
-# # class ActionPause(Action):
-# #
-# #     def name(self) -> Text:
-# #         return "action_pause"
-# #
-# #     def run(self,
-# #             dispatcher: CollectingDispatcher,
-# #             tracker: Tracker,
-# #             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-# #
-# #         return [ConversationPaused()]
-#
-#
-#
-#
-#
-#
-#
-#
-#
+class ActionPause(Action):
+
+     def name(self) -> Text:
+         return "action_pause"
+
+     def run(self,
+             dispatcher: CollectingDispatcher,
+             tracker: Tracker,
+             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+         return [ConversationPaused()]
 #
 #
 # # class ActionSearchConcerts(Action):
