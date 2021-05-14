@@ -140,15 +140,16 @@ responses:
       you are {name}, one of our nurses in the Trust, right? Your birthday was 2 weeks
       ago and you had a party at Jamcafé where you met Alex Smith. Is this correct?
   utter_disbelief:
-  - text: Wow, ok, I'm surprised! This is scary stuff you know!
+  - text: Wow, ok... this is scary stuff you know!
   - text: I can't believe you don't appear to be shocked by this.
+  - text: I'm quite surprised by your reaction!
   utter_fiction_story:
   - text: I know it's fiction, and that never happened to you, but you can at least
       pretend that it happened that way. So, let me continue with the story.
   utter_guess_what_happened:
   - text: Alex received an email the next day with title "You made my birthday so
       special". In the body of the text said "Keep the attached photo as a memory
-      of the night"! And guess what they did.
+      of the night"! And guess what they did?
   utter_positive_reaction:
   - text: We wish that Alex did that first. Things might be totally different.
   utter_clarify_email_sender:
@@ -158,7 +159,7 @@ responses:
       two of you had just met, and exploited the situation in sending an email to
       Alex. It is terrifying, isn't it?
   utter_why_not_terrifying:
-  - text: Why it is not terrifying?
+  - text: Why is it not terrifying?
   utter_guess_how_happened:
   - text: What do you think happened? How did they find out about you and Alex?
   utter_please_dont_worry:

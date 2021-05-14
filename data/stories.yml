@@ -55,6 +55,7 @@ stories:
 - story: unhappy with role play, say goodbye
   steps:
   - checkpoint: check_q3
+  - action: utter_ask_rp_continue
   - intent: deny
   - action: utter_goodbye
   - action: action_pause
@@ -62,6 +63,7 @@ stories:
 - story: happy with role play, provide background
   steps:
   - checkpoint: check_q3
+  - action: utter_ask_rp_continue
   - intent: affirm
   - action: utter_background
   - checkpoint: check_background
@@ -110,6 +112,37 @@ stories:
   - action: utter_positive_reaction
   - action: utter_clarify_email_sender
   - checkpoint: check_clarification
+
+- story: ask if terrifying, no
+  steps:
+  - checkpoint: check_clarification
+  - intent: deny
+  - action: utter_disbelief
+  - action: utter_guess_how_happened
+  - intent: social_media
+  - action: utter_social_media
+  - action: utter_who_posted_it
+  - or:
+    - intent: affirm
+    - intent: deny
+  - action: utter_social_mapping_tools
+  - action: utter_someone_monitoring
+  - checkpoint: check_if_monitored
+
+- story: ask if terrifying, yes
+  steps:
+  - checkpoint: check_clarification
+  - intent: affirm
+  - action: utter_guess_how_happened
+  - intent: suggest_events
+  - action: utter_please_dont_worry
+  - action: utter_who_posted_it
+  - or:
+    - intent: affirm
+    - intent: deny
+  - action: utter_social_mapping_tools
+  - action: utter_someone_monitoring
+  - checkpoint: check_if_monitored
 
 - story: yes to being monitored
   steps:
