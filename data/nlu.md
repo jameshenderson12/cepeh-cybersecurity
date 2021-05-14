@@ -21,7 +21,6 @@
 - bollocks
 - bollox
 - motherfucker
--
 
 ## intent:social_media
 - Facebook
