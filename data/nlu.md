@@ -49,6 +49,7 @@
 - spy us
 - spy on me
 - Have they been watching me?
+- Someone spying on us?
 
 ## intent:wrong_action
 - Clicked on the image
@@ -66,6 +67,7 @@
 - Opened the attachment?
 - opened the attahcement
 - Viewed the attached photo
+- Opened the email attachment?
 
 ## intent:right_action
 - Deleted the email
@@ -77,6 +79,7 @@
 - deleted the email
 - He deleted the email?
 - She could have messaged me
+- Delete the email
 
 ## intent:correct
 - All of these options
@@ -146,6 +149,7 @@
 - 8
 - 9
 - 10
+- About 6
 
 ## intent:chitchat/ask_name
 - What is your name?
@@ -297,6 +301,11 @@
 - [paul](name)
 - I'm [Jim](name)
 - My name is [Isla](name).
+- I'm [Giovanni](name)
+- I'm Theo
+- My name is [Roberto](name).
+- I'm [Alexandra](name)
+- [Jacob](name)
 
 ## intent:greet
 - hey
@@ -369,6 +378,8 @@
 - Ok, will do.
 - Sure
 - I think so
+- Wondering this a little, yes.
+- Yes :-)
 
 ## intent:deny
 - No
@@ -384,6 +395,7 @@
 - nep
 - nah
 - No, i didn't know that
+- Not really
 
 ## intent:bot_challenge
 - are you a bot?
@@ -398,6 +410,7 @@
 - Change my privacy settings
 - Only friends can see the information
 - Change privacy settings
+- Change privacy settings on social media
 
 ## intent:fair_prevention
 - But I don't use it for work
@@ -433,3 +446,4 @@
 - Had a reassuring follow up discussion with IT
 - Chatted to IT
 - Spoken to someone sooner
+- Discuss it with the person first.

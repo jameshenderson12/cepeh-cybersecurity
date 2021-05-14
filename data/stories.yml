@@ -10,14 +10,12 @@ stories:
   - action: utter_welcome
   - action: utter_continue
   - checkpoint: check_continue
-
 - story: do not continue
   steps:
   - checkpoint: check_continue
   - intent: deny
   - action: utter_goodbye
   - action: action_pause
-
 - story: yes to continue
   steps:
   - checkpoint: check_continue
@@ -27,7 +25,6 @@ stories:
   - intent: give_rating
   - action: utter_acknowledge
   - checkpoint: check_q1
-
 - story: continue to question 2, correct
   steps:
   - checkpoint: check_q1
@@ -35,7 +32,6 @@ stories:
   - intent: correct
   - action: utter_correct
   - checkpoint: check_q2
-
 - story: continue to question 2, incorrect
   steps:
   - checkpoint: check_q1
@@ -43,7 +39,6 @@ stories:
   - intent: incorrect
   - action: utter_incorrect
   - checkpoint: check_q2
-
 - story: continue to question 3
   steps:
   - checkpoint: check_q2
@@ -51,7 +46,6 @@ stories:
   - intent: give_rating
   - action: utter_acknowledge
   - checkpoint: check_q3
-
 - story: unhappy with role play, say goodbye
   steps:
   - checkpoint: check_q3
@@ -59,7 +53,6 @@ stories:
   - intent: deny
   - action: utter_goodbye
   - action: action_pause
-
 - story: happy with role play, provide background
   steps:
   - checkpoint: check_q3
@@ -67,14 +60,12 @@ stories:
   - intent: affirm
   - action: utter_background
   - checkpoint: check_background
-
 - story: agree background is scary
   steps:
   - checkpoint: check_background
   - intent: affirm
   - action: utter_birthday_query
   - checkpoint: check_birthday
-
 - story: disagree background is scary
   steps:
   - checkpoint: check_background
@@ -82,14 +73,12 @@ stories:
   - action: utter_disbelief
   - action: utter_birthday_query
   - checkpoint: check_birthday
-
 - story: admit to birthday party meeting
   steps:
   - checkpoint: check_birthday
   - intent: affirm
   - action: utter_guess_what_happened
   - checkpoint: check_what_happened
-
 - story: refuse to admit to birthday party meeting
   steps:
   - checkpoint: check_birthday
@@ -97,14 +86,12 @@ stories:
   - action: utter_fiction_story
   - action: utter_guess_what_happened
   - checkpoint: check_what_happened
-
 - story: guess what they did next, wrong
   steps:
   - checkpoint: check_what_happened
   - intent: wrong_action
   - action: utter_clarify_email_sender
   - checkpoint: check_clarification
-
 - story: guess what they did next, right
   steps:
   - checkpoint: check_what_happened
@@ -112,7 +99,6 @@ stories:
   - action: utter_positive_reaction
   - action: utter_clarify_email_sender
   - checkpoint: check_clarification
-
 - story: ask if terrifying, no
   steps:
   - checkpoint: check_clarification
@@ -128,7 +114,6 @@ stories:
   - action: utter_social_mapping_tools
   - action: utter_someone_monitoring
   - checkpoint: check_if_monitored
-
 - story: ask if terrifying, yes
   steps:
   - checkpoint: check_clarification
@@ -143,14 +128,12 @@ stories:
   - action: utter_social_mapping_tools
   - action: utter_someone_monitoring
   - checkpoint: check_if_monitored
-
 - story: yes to being monitored
   steps:
   - checkpoint: check_if_monitored
   - intent: affirm
   - action: utter_how_to_prevent
   - checkpoint: check_prevent
-
 - story: no to being monitored
   steps:
   - checkpoint: check_if_monitored
@@ -158,7 +141,6 @@ stories:
   - action: utter_doubt_in_monitoring
   - action: utter_how_to_prevent
   - checkpoint: check_prevent
-
 - story: user responds correctly to future prevention
   steps:
   - checkpoint: check_prevent
@@ -166,7 +148,6 @@ stories:
   - action: utter_good_prevention
   - action: utter_phishing_question
   - checkpoint: check_phishing
-
 - story: user responds reasonably to future prevention
   steps:
   - checkpoint: check_prevent
@@ -174,7 +155,6 @@ stories:
   - action: utter_fair_prevention
   - action: utter_phishing_question
   - checkpoint: check_phishing
-
 - story: user responds poorly to future prevention
   steps:
   - checkpoint: check_prevent
@@ -182,7 +162,6 @@ stories:
   - action: utter_poor_prevention
   - action: utter_phishing_question
   - checkpoint: check_phishing
-
 - story: user is aware of phishing
   steps:
   - checkpoint: check_phishing
@@ -196,7 +175,6 @@ stories:
   - action: utter_dont_reveal_much
   - action: utter_nhs_policy_question
   - checkpoint: check_nhs_policy
-
 - story: user is unaware of phishing
   steps:
   - checkpoint: check_phishing
@@ -210,7 +188,6 @@ stories:
   - action: utter_dont_reveal_much
   - action: utter_nhs_policy_question
   - checkpoint: check_nhs_policy
-
 - story: user is familiar with nhs policy
   steps:
   - checkpoint: check_nhs_policy
@@ -218,7 +195,6 @@ stories:
   - action: utter_familiar_nhs_policy
   - action: utter_role_play_thanks
   - checkpoint: check_q4
-
 - story: user is unfamiliar with nhs policy
   steps:
   - checkpoint: check_nhs_policy
@@ -226,7 +202,6 @@ stories:
   - action: utter_unfamiliar_nhs_policy
   - action: utter_role_play_thanks
   - checkpoint: check_q4
-
 - story: continue to question 4, incorrect
   steps:
   - checkpoint: check_q4
@@ -234,7 +209,6 @@ stories:
   - intent: incorrect
   - action: utter_incorrect
   - checkpoint: check_q5
-
 - story: continue to question 4, correct
   steps:
   - checkpoint: check_q4
@@ -242,13 +216,19 @@ stories:
   - intent: correct
   - action: utter_correct
   - checkpoint: check_q5
-
 - story: continue to question 5
   steps:
   - checkpoint: check_q5
   - action: utter_why_think_that
   - intent: answer_why_think_that
   - action: utter_different_if_real
+  - intent: answer_different_if_real
+  - action: utter_rating_q7
+  - intent: give_rating
+  - action: utter_final_thanks
+  - action: action_pause
+- story: Story from Conversation ID f9fe74f3d94e4478824eedf5b5a0c513
+  steps:
   - intent: answer_different_if_real
   - action: utter_rating_q7
   - intent: give_rating

@@ -1,42 +1,67 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
 intents:
-- greet
-- give_name
-- goodbye
-- affirm
-- deny
-- bot_challenge
-- chitchat
-- nlu_fallback
-- praise
-- correct
-- incorrect
-- wrong_action
-- right_action
-- suggest_events
-- social_media
-- give_rating
-- poor_prevention
-- fair_prevention
-- good_prevention
-- answer_why_think_that
-- answer_different_if_real
-- profanity
+- greet:
+    use_entities: true
+- give_name:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- chitchat:
+    use_entities: true
+- nlu_fallback:
+    use_entities: true
+- praise:
+    use_entities: true
+- correct:
+    use_entities: true
+- incorrect:
+    use_entities: true
+- wrong_action:
+    use_entities: true
+- right_action:
+    use_entities: true
+- suggest_events:
+    use_entities: true
+- social_media:
+    use_entities: true
+- give_rating:
+    use_entities: true
+- poor_prevention:
+    use_entities: true
+- fair_prevention:
+    use_entities: true
+- good_prevention:
+    use_entities: true
+- answer_why_think_that:
+    use_entities: true
+- answer_different_if_real:
+    use_entities: true
+- profanity:
+    use_entities: true
 entities:
 - name
 slots:
   name:
-    type: text
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
     influence_conversation: false
 responses:
   utter_greet:
   - text: Hello, I'm Alison and I'm a chatbot. What's your name? 😊
   utter_welcome:
-  - text: Nice to meet you {name}. My aim is to raise your awareness on the role that
-      a nurse or any other healthcare worker can play on the digital safety of a healthcare
-      organisation.
+  - text: Nice to meet you {name}. My aim is to raise your awareness on the role that a nurse or any other healthcare worker can play on the digital safety of a healthcare organisation.
   utter_continue:
   - buttons:
     - payload: /affirm
@@ -47,8 +72,7 @@ responses:
   utter_clarify:
   - text: Did that help you {name}?
   utter_inform_questions:
-  - text: Great! I’m glad you do! Please answer the following questions - it's
-      really helpful for me to understand how effective I am.
+  - text: Great! I’m glad you do! Please answer the following questions - it's really helpful for me to understand how effective I am.
   utter_proceed:
   - text: Ok, great, let's carry on!
   - text: Thank you for responding - let's move on.
@@ -58,11 +82,8 @@ responses:
   - text: Ok, shame to see you go but thanks for the chat.
   - text: No problem, let's chat another time.
   utter_iamabot:
-  - text: I am a bot. Powered by Rasa and maintained by the HELM team at the University
-      of Nottingham.
-  - text: Let's be fair, you don't hear me asking you about your origins? As it happens,
-      I am a bot, powered by Rasa, and regularly rebooted, trained and maintained
-      by HELM at the University of Nottingham.
+  - text: I am a bot. Powered by Rasa and maintained by the HELM team at the University of Nottingham.
+  - text: Let's be fair, you don't hear me asking you about your origins? As it happens, I am a bot, powered by Rasa, and regularly rebooted, trained and maintained by HELM at the University of Nottingham.
   utter_chitchat/ask_name:
   - image: https://i.imgur.com/7WnBgye.jpg
     text: My name is Alison and I work in the IT Team at Imagine NHS Trust.
@@ -83,20 +104,16 @@ responses:
   - text: Got that, thanks.
   - text: Thanks for answering that.
   utter_profanity:
-  - text: Err, I would prefer it if you could refrain from using that kind of language
-      please.
-  - text: Ok, I'm sure we can get through this without you using that kind of language
-      please.
-  - text: I'd appreciate it if you could show a little compassion here - please mind
-      your language.
+  - text: Err, I would prefer it if you could refrain from using that kind of language please.
+  - text: Ok, I'm sure we can get through this without you using that kind of language please.
+  - text: I'd appreciate it if you could show a little compassion here - please mind your language.
   - text: Please watch your language if you don't mind. I am trying to be helpful.
   utter_random_words:
   - text: Would you mind if we could try and stay on topic please?
   - text: Can we try and focus on our discussion please?
   - text: Let's stay on topic please.
   utter_rating_q1:
-  - text: Q1. Do you feel confident when using technology? (Rate 1️⃣ Not confident
-      at all - 🔟 Very confident)
+  - text: Q1. Do you feel confident when using technology? (Rate 1️⃣ Not confident at all - 🔟 Very confident)
   utter_causes_cybersecurity_attacks:
   - buttons:
     - payload: /incorrect
@@ -115,49 +132,29 @@ responses:
   utter_correct:
   - text: ✔️ Yes, you are correct! The answer is "All of these options".
   utter_rating_q3:
-  - text: Q3. How confident do you feel of your knowledge on cybersecurity? (Rate
-      1️⃣ Not confident at all - 🔟 Very confident)
+  - text: Q3. How confident do you feel of your knowledge on cybersecurity? (Rate 1️⃣ Not confident at all - 🔟 Very confident)
   utter_ask_rp_continue:
-  - text: Thank you for answering the questions. In order to understand the role of
-      each one of us in cybersecurity, we are going to do some role playing, is that
-      OK? (Please try to give me direct answers)
+  - text: Thank you for answering the questions. In order to understand the role of each one of us in cybersecurity, we are going to do some role playing, is that OK? (Please try to give me direct answers)
   utter_default:
   - text: Sorry, I didn't get that, can you rephrase?
   - text: Not sure I follow, sorry. What do you mean?
   - text: Sorry, I'm lost. Can you repeat that another way?
   utter_background:
-  - text: So, first let me give you some background on what happened in the last few
-      days. At the Imagine NHS Trust, all IT systems went down for 48 hours last week
-      leading to £2 billion pounds in loses, 3000 appointments cancelled and 600 planned
-      surgeries to be postponed. As the scale of the security breach became clear
-      on Thursday afternoon, ambulances were diverted and patients told to avoid some
-      A&amp;E departments. Staff reverted to pen and paper and used their own mobiles
-      after key systems were affected (including telephones). The Home Secretary has
-      now confirmed that all the NHS IT systems working and no patient records were
-      accessed. Scary story isn't it?
+  - text: So, first let me give you some background on what happened in the last few days. At the Imagine NHS Trust, all IT systems went down for 48 hours last week leading to £2 billion pounds in loses, 3000 appointments cancelled and 600 planned surgeries to be postponed. As the scale of the security breach became clear on Thursday afternoon, ambulances were diverted and patients told to avoid some A&amp;E departments. Staff reverted to pen and paper and used their own mobiles after key systems were affected (including telephones). The Home Secretary has now confirmed that all the NHS IT systems working and no patient records were accessed. Scary story isn't it?
   utter_birthday_query:
-  - text: Anyway, as I said, I’m Ali from the IT team at the Imagine NHS Trust. And
-      you are {name}, one of our nurses in the Trust, right? Your birthday was 2 weeks
-      ago and you had a party at Jamcafé where you met Alex Smith. Is this correct?
+  - text: Anyway, as I said, I’m Ali from the IT team at the Imagine NHS Trust. And you are {name}, one of our nurses in the Trust, right? Your birthday was 2 weeks ago and you had a party at Jamcafé where you met Alex Smith. Is this correct?
   utter_disbelief:
   - text: Wow, ok... this is scary stuff you know!
   - text: I can't believe you don't appear to be shocked by this.
   - text: I'm quite surprised by your reaction!
   utter_fiction_story:
-  - text: I know it's fiction, and that never happened to you, but you can at least
-      pretend that it happened that way. So, let me continue with the story.
+  - text: I know it's fiction, and that never happened to you, but you can at least pretend that it happened that way. So, let me continue with the story.
   utter_guess_what_happened:
-  - text: Alex received an email the next day with title "You made my birthday so
-      special". In the body of the text said "Keep the attached photo as a memory
-      of the night"! And guess what they did?
+  - text: Alex received an email the next day with title "You made my birthday so special". In the body of the text said "Keep the attached photo as a memory of the night"! And guess what they did?
   utter_positive_reaction:
   - text: We wish that Alex did that first. Things might be totally different.
   utter_clarify_email_sender:
-  - text: We know that you didn't send that email, but, regrettably, Alex tried to
-      open the image. The attachment was actually a virus. The virus quickly spread
-      resulting in the 48 hour shutdown of the systems. Someone worked out that the
-      two of you had just met, and exploited the situation in sending an email to
-      Alex. It is terrifying, isn't it?
+  - text: We know that you didn't send that email, but, regrettably, Alex tried to open the image. The attachment was actually a virus. The virus quickly spread resulting in the 48 hour shutdown of the systems. Someone worked out that the two of you had just met, and exploited the situation in sending an email to Alex. It is terrifying, isn't it?
   utter_why_not_terrifying:
   - text: Why is it not terrifying?
   utter_guess_how_happened:
@@ -167,71 +164,41 @@ responses:
   utter_social_media:
   - text: Yes, social media is responsible for that.
   utter_who_posted_it:
-  - text: Someone saw the pictures from your birthday party on Instagram and Facebook.
-      I bet that you are wondering how that even happened since you didn't even post
-      anything. Well, unfortunately your friend Chelsie did. Do you know that there
-      is a lot of software that can do that?
+  - text: Someone saw the pictures from your birthday party on Instagram and Facebook. I bet that you are wondering how that even happened since you didn't even post anything. Well, unfortunately your friend Chelsie did. Do you know that there is a lot of software that can do that?
   utter_social_mapping_tools:
-  - text: There are some tools available to anyone that can gather someone's information
-      from LinkedIn, Facebook, Twitter, Instagram, Google+, and even from Chinese
-      Weibo and Douban, and Russian VKontakte. The most well-known one is Social Mapper.
-      You can see details here about that software https://www.youtube.com/watch?v=-lOf-kUELkg
+  - text: There are some tools available to anyone that can gather someone's information from LinkedIn, Facebook, Twitter, Instagram, Google+, and even from Chinese Weibo and Douban, and Russian VKontakte. The most well-known one is Social Mapper. You can see details here about that software https://www.youtube.com/watch?v=-lOf-kUELkg
   utter_someone_monitoring:
-  - text: I bet now you are thinking that someone is monitoring your social media
-      accounts? And found all your personal information, right?
+  - text: I bet now you are thinking that someone is monitoring your social media accounts? And found all your personal information, right?
   utter_doubt_in_monitoring:
-  - text: So you don't care if someone steals your credit or debit card? Or even end
-      up in jail as a result of someone stealing your data?
+  - text: So you don't care if someone steals your credit or debit card? Or even end up in jail as a result of someone stealing your data?
   utter_how_to_prevent:
   - text: So, what could you do in order this not to happen again?
   utter_good_prevention:
-  - text: That's a good plan. You can change your settings so only your friends can
-      see your posts.
+  - text: That's a good plan. You can change your settings so only your friends can see your posts.
   utter_poor_prevention:
-  - text: If you do nothing, then someone can steal your identity and the consequences
-      could be worse the next time!
+  - text: If you do nothing, then someone can steal your identity and the consequences could be worse the next time!
   utter_fair_prevention:
-  - text: I'm not saying that you shouldn't post anything work related, but allowing
-      everyone to see your personal photos can easily allow someone to combine information
-      from your social media accounts to gather a holistic view of your online identity.
-      Where do you work? Who are your colleagues? Which colleages are also friends?
-      What big events are happening in your life? And so on...
+  - text: I'm not saying that you shouldn't post anything work related, but allowing everyone to see your personal photos can easily allow someone to combine information from your social media accounts to gather a holistic view of your online identity. Where do you work? Who are your colleagues? Which colleages are also friends? What big events are happening in your life? And so on...
   utter_phishing_question:
-  - text: When hackers don't have access to your account, they cannot send phishing
-      emails. Do you know what phishing emails are?
+  - text: When hackers don't have access to your account, they cannot send phishing emails. Do you know what phishing emails are?
   utter_aware_phishing:
   - text: Good. Please see here if you want [further information on phishing](https://keepitconfidential.nhs.uk/wp-content/uploads/2019/09/Phishing_Final_1.webmhd.webm)
   utter_unaware_phishing:
-  - text: Phishing is the fraudulent attempt to obtain sensitive information such
-      as usernames, passwords and credit card details by disguising as a trustworthy
-      entity in an electronic communication. Typically carried out by email spoofing,
-      instant messaging, and directs users to enter personal information on a fake
-      website (the look and feel of which are identical to the legitimate site). See
-      more on [phishing](https://keepitconfidential.nhs.uk/wp-content/uploads/2019/09/Phishing_Final_1.webmhd.webm)
+  - text: Phishing is the fraudulent attempt to obtain sensitive information such as usernames, passwords and credit card details by disguising as a trustworthy entity in an electronic communication. Typically carried out by email spoofing, instant messaging, and directs users to enter personal information on a fake website (the look and feel of which are identical to the legitimate site). See more on [phishing](https://keepitconfidential.nhs.uk/wp-content/uploads/2019/09/Phishing_Final_1.webmhd.webm)
   utter_feel_better:
   - text: /{name}/, do you feel better now?
   utter_it_happens_alot:
-  - text: You should not feel bad. It happens more often that you can imagine, so
-      just make sure that you set the privacy settings on your accounts and check
-      them every now and then. For example, updating the Facebook app might revert
-      the setting to its default, so be aware that every time you update or change
-      device you should check the privacy settings.
+  - text: You should not feel bad. It happens more often that you can imagine, so just make sure that you set the privacy settings on your accounts and check them every now and then. For example, updating the Facebook app might revert the setting to its default, so be aware that every time you update or change device you should check the privacy settings.
   utter_dont_reveal_much:
-  - text: I'd also suggest not to reveal too much personal information on social media.
-      We all like the "Likes" and "Shares" from friends, but we should be careful
-      on what we are sharing.
+  - text: I'd also suggest not to reveal too much personal information on social media. We all like the "Likes" and "Shares" from friends, but we should be careful on what we are sharing.
   utter_nhs_policy_question:
   - text: Do you know that NHS has a policy on social media?
   utter_familiar_nhs_policy:
-  - text: If you haven't seen it recently, I'd suggest reading the "3.2.1 Safeguarding
-      Yourself" section for up-to-date information. Please see [the NHS social media
-      policy](https://www.england.nhs.uk/wp-content/uploads/2018/04/social-media-policy.pdf)
+  - text: If you haven't seen it recently, I'd suggest reading the "3.2.1 Safeguarding Yourself" section for up-to-date information. Please see [the NHS social media policy](https://www.england.nhs.uk/wp-content/uploads/2018/04/social-media-policy.pdf)
   utter_unfamiliar_nhs_policy:
-  - text: I'd suggest reading the "3.2.1 Safeguarding Yourself" section from [the
-      NHS social media policy](https://www.england.nhs.uk/wp-content/uploads/2018/04/social-media-policy.pdf)
+  - text: I'd suggest reading the "3.2.1 Safeguarding Yourself" section from [the NHS social media policy](https://www.england.nhs.uk/wp-content/uploads/2018/04/social-media-policy.pdf)
   utter_role_play_thanks:
-  - text: Thank you for carrying out this role play. Let's try to debrief the session
-      now.
+  - text: Thank you for carrying out this role play. Let's try to debrief the session now.
   utter_whose_fault_cyberattack:
   - buttons:
     - payload: /incorrect
@@ -248,14 +215,12 @@ responses:
   utter_why_think_that:
   - text: Q5. Why do you think that? Can you justify your choice?
   utter_different_if_real:
-  - text: Q6. What might have you done differently if it was happening to you for
-      real?
+  - text: Q6. What might have you done differently if it was happening to you for real?
   utter_rating_q7:
-  - text: Q7. How confident do you feel of your knowledge on cybersecurity? (Rate
-      1️⃣ Not confident at all - 🔟 Very confident)
+  - text: Q7. How confident do you feel of your knowledge on cybersecurity? (Rate 1️⃣ Not confident at all - 🔟 Very confident)
   utter_final_thanks:
-  - text: Thank you for talking to me {name}! I hope you enjoyed it as much as I did!
-      I would really appreciate it if you could now [undertake a quick evaluation](https://docs.google.com/forms/d/1MwlYCzBSeM4BPU5-PKIRiV6fctmwy4mCdSuYOAD0Rwg/edit)
-      of our experience. Goodbye for now. 👋
+  - text: Thank you for talking to me {name}! I hope you enjoyed it as much as I did! I would really appreciate it if you could now [undertake a quick evaluation](https://docs.google.com/forms/d/1MwlYCzBSeM4BPU5-PKIRiV6fctmwy4mCdSuYOAD0Rwg/edit) of our experience. Goodbye for now. 👋
 actions:
 - action_pause
+forms: {}
+e2e_actions: []
