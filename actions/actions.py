@@ -18,14 +18,12 @@
 # #          dispatcher.utter_message(text="Hello World!")
 # #
 # #          return []
-#
-# # from typing import Any, Text, Dict, List
-# # from rasa_sdk import Action, Tracker
-# # from rasa_sdk.executor import CollectingDispatcher
-#
-# from rasa_sdk import Action, Tracker
-# from rasa_sdk.events import SlotSet
-#
+
+from typing import Any, Text, Dict, List
+from rasa_sdk import Action, Tracker
+from rasa_sdk.executor import CollectingDispatcher
+from rasa_sdk.events import SlotSet
+
 # class ActionUserToContinue(Action):
 #
 #     def name(self):
@@ -81,8 +79,7 @@
 #         elif intent == "deny":
 #             return [SlotSet("shall_roleplay", False)]
 #         return []
-#
-#
+
 class ActionPause(Action):
 
      def name(self) -> Text:
@@ -94,8 +91,8 @@ class ActionPause(Action):
              domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
          return [ConversationPaused()]
-#
-#
+
+
 # # class ActionSearchConcerts(Action):
 # #     def name(self):
 # #         return "action_search_concerts"
