@@ -121,31 +121,31 @@
 - Keep up the good work
 - you're clever
 
-## intent:give_rating_q1
-- I would say [1](ratingQ1)
-- Definitely [2](ratingQ1)
-- Could be [3](ratingQ1)
-- [1](ratingQ1)
-- [2](ratingQ1)
-- [6](ratingQ1)
-- [4](ratingQ1)
-
-## intent:give_rating_q3
-- [3](ratingQ1)
-- [5](ratingQ3)
-- Probably [4](ratingQ3)
-- What about [5](ratingQ3)
-- Let's say [6](ratingQ3)
-
-## intent:give_rating_q7
-- Got to be [7](ratingQ7)
-- Hmm [8](ratingQ7)
-- How about [9](ratingQ7)
-- Possibly [10](ratingQ7)
-- [7](ratingQ7)
-- [8](ratingQ7)
-- [9](ratingQ7)
-- [10](ratingQ7)
+## intent:give_rating
+- I would say 1
+- Definitely 2
+- Could be 3
+- 1
+- 2
+- 6
+- 4
+- 3
+- 5
+- Maybe an 8
+- Possible a 7
+- Around a 5
+- About 8
+- Probably 4
+- What about 5
+- Let's say 6
+- Got to be 7
+- Hmm 8
+- How about 9
+- Possibly 10
+- 7
+- 8
+- 9
+- 10
 
 ## intent:chitchat/ask_name
 - What is your name?
