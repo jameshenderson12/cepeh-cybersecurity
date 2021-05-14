@@ -15,10 +15,12 @@ Latest updates:
 
 Assistant's Details:
 Alison from IT @ Imagine NHS Trust
+
 Description:
 I aim to raise your awareness on the role that a healthcare professional can play in the digital safety of a healthcare organisation.
 
 At localhost:
 http://localhost:5002/guest/conversations/production/04bb358b834c449b843b4f356824043b
+
 Using ngrok:
 https://5c900a5763fc.ngrok.io/guest/conversations/production/04bb358b834c449b843b4f356824043b
