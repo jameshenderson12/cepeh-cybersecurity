@@ -15,6 +15,13 @@
 - wank
 - prick
 - bastard
+- dickhead
+- shithole
+- pisshead
+- bollocks
+- bollox
+- motherfucker
+-
 
 ## intent:social_media
 - Facebook
