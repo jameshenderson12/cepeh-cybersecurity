@@ -223,7 +223,7 @@ stories:
   steps:
   - checkpoint: check_nhs_policy
   - intent: deny
-  - action: utter_unfamliar_nhs_policy
+  - action: utter_unfamiliar_nhs_policy
   - action: utter_role_play_thanks
   - checkpoint: check_q4
 
