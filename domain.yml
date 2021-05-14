@@ -17,9 +17,7 @@ intents:
 - right_action
 - suggest_events
 - social_media
-- technical_confidence
-- initial_cybersecurity_confidence
-- final_cybersecurity_confidence
+- give_rating
 - poor_prevention
 - fair_prevention
 - good_prevention
@@ -126,7 +124,6 @@ responses:
   utter_default:
   - text: Sorry, I didn't get that, can you rephrase?
   - text: Not sure I follow, sorry. What do you mean?
-  - text: Would you mind saying that a bit differently for me please?
   - text: Sorry, I'm lost. Can you repeat that another way?
   utter_background:
   - text: So, first let me give you some background on what happened in the last few

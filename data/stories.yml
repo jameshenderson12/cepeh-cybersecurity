@@ -24,7 +24,7 @@ stories:
   - intent: affirm
   - action: utter_inform_questions
   - action: utter_rating_q1
-  - intent: technical_confidence
+  - intent: give_rating
   - action: utter_acknowledge
   - checkpoint: check_q1
 
@@ -48,7 +48,7 @@ stories:
   steps:
   - checkpoint: check_q2
   - action: utter_rating_q3
-  - intent: initial_cybersecurity_confidence
+  - intent: give_rating
   - action: utter_acknowledge
   - checkpoint: check_q3
 
@@ -218,6 +218,6 @@ stories:
   - action: utter_different_if_real
   - intent: answer_different_if_real
   - action: utter_rating_q7
-  - intent: final_cybersecurity_confidence
+  - intent: give_rating
   - action: utter_final_thanks
   - action: action_pause
