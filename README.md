@@ -4,7 +4,7 @@
 This is the GitHub repository for the cybersecurity chatbot as part of implementation for the CEPEH project (https://cepeh.eu/).
 
 User testing is available at:
-http://cepeh1.med.auth.gr/guest/conversations/production/0f782a38be074d22b809143ad857e5df
+http://localhost:5002/guest/conversations/production/04bb358b834c449b843b4f356824043b
 
 Latest updates:
 - Removed unnecessary slots
@@ -12,3 +12,13 @@ Latest updates:
 - Tidied up the domain and config files
 - Added more data
 - Retrained bot and deployed new model
+
+Assistant's Details:
+Alison from IT @ Imagine NHS Trust
+Description:
+I aim to raise your awareness on the role that a healthcare professional can play in the digital safety of a healthcare organisation.
+
+At localhost:
+http://localhost:5002/guest/conversations/production/04bb358b834c449b843b4f356824043b
+Using ngrok:
+https://5c900a5763fc.ngrok.io/guest/conversations/production/04bb358b834c449b843b4f356824043b
