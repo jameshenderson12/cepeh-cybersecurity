@@ -107,7 +107,7 @@ stories:
   steps:
   - checkpoint: check_what_happened
   - intent: right_action
-  - action: utter_postive_reaction
+  - action: utter_positive_reaction
   - action: utter_clarify_email_sender
   - checkpoint: check_clarification
 
