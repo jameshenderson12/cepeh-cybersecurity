@@ -92,7 +92,6 @@ class ActionPause(Action):
 
          return [ConversationPaused()]
 
-
 # # class ActionSearchConcerts(Action):
 # #     def name(self):
 # #         return "action_search_concerts"
