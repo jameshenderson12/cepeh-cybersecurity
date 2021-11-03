@@ -306,6 +306,7 @@
 - My name is [Roberto](name).
 - I'm [Alexandra](name)
 - [Jacob](name)
+- my name's iraklis
 
 ## intent:greet
 - hey
