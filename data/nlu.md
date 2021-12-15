@@ -327,6 +327,7 @@
 - Hi
 - Hello
 - yo
+- Hello!
 
 ## intent:goodbye
 - cu
